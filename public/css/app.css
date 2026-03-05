@@ -1,0 +1,97 @@
+/* Blue theme stylesheet - polished, responsive, and tidy */
+:root{
+	--blue-100:#e6f4ff; /* very light */
+	--blue-200:#cfeeff;
+	--blue-400:#60a5fa; /* light */
+	--blue-600:#2563eb; /* primary */
+	--blue-800:#08243f; /* deep / navy (darker) */
+	--muted:#64748b;
+	--card-shadow: 0 12px 36px rgba(8,36,63,0.06);
+}
+
+/* Global layout */
+body{
+	font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+	color: #0f172a;
+	background: #ffffff; /* white background */
+	margin:0;
+	line-height:1.5;
+}
+
+.site-header{
+	background: linear-gradient(90deg, var(--blue-800), #061a2a); /* deep blue header */
+	padding: 0.75rem 1rem;
+	color:#fff;
+}
+.site-header .nav a{ color: #cfeeff }
+.site-header .brand-badge{ color:#fff }
+.container{ max-width:1100px; margin:0 auto; padding:0 1rem; }
+
+.nav { display:flex; gap:1rem; align-items:center; }
+.nav a{ color:var(--blue-800); text-decoration:none; font-weight:600; padding:0.35rem 0.6rem; border-radius:8px }
+.nav a:hover{ background: rgba(37,99,235,0.06); }
+.nav .spacer{ flex:1; }
+.nav .user { color:var(--blue-600); font-weight:600; margin-right:0.5rem }
+.nav button.logout { background:none;border:0;color:var(--blue-800);cursor:pointer;font-weight:600 }
+
+/* brand */
+.brand-badge{ display:inline-flex; align-items:center; gap:0.5rem; font-weight:800; color:var(--blue-800); font-size:1.05rem }
+.brand-badge .logo-dot{ width:36px; height:36px; border-radius:8px; background:linear-gradient(135deg,var(--blue-600),var(--blue-800)); display:inline-block; box-shadow:0 10px 28px rgba(37,99,235,0.16) }
+/* make included SVG logo a bit smaller and aligned */
+.brand-badge svg{ width:28px; height:28px; display:block }
+
+main{ padding:2.25rem 0; }
+
+/* Hero / welcome */
+.hero{
+	padding:3rem 0;
+}
+.hero .card{ background: #fff; padding:2rem;border-radius:14px; box-shadow:var(--card-shadow); display:flex; gap:1.5rem; align-items:center }
+.hero .left{ flex:1; min-width:260px }
+.hero .right{ flex:1; min-width:220px }
+.hero h1{ font-size:2rem; color:var(--blue-800); margin:0 0 0.5rem; letter-spacing:-0.4px }
+.hero p.lead{ color:#334155; margin:0 0 1rem; max-width:54ch }
+
+.btn{ display:inline-block; padding:0.6rem 1.15rem; border-radius:10px; border:0; cursor:pointer; font-weight:700; font-size:0.95rem }
+.btn-primary{ background: linear-gradient(180deg,var(--blue-600),var(--blue-800)); color:#fff; box-shadow: 0 10px 30px rgba(37,99,235,0.16); transition:transform .12s ease,box-shadow .12s ease }
+.btn-primary:hover{ transform:translateY(-3px); box-shadow: 0 22px 50px rgba(37,99,235,0.20) }
+.btn-outline{ background:transparent; color:var(--blue-800); border:0; padding:0.55rem 1rem; box-shadow:inset 0 0 0 1px rgba(37,99,235,0.06); text-decoration:none }
+.btn, .btn a, .btn-outline, .btn-outline a { text-decoration:none !important }
+
+.btn-danger{ background:#ef4444;color:#fff;border-radius:8px;padding:.5rem .75rem;border:0;font-weight:700 }
+
+/* Cards and utilities */
+.grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:1rem; margin-top:1rem; }
+.info-card{ background:#fff; padding:1rem;border-radius:10px; border:1px solid rgba(8,36,63,0.06); box-shadow:0 6px 18px rgba(8,36,63,0.03); transition:transform .12s ease,box-shadow .12s ease }
+.info-card h3{ margin:0 0 .5rem; color:var(--blue-800); display:flex;align-items:center;gap:.5rem }
+.info-card p{ margin:0; color:#334155 }
+.info-card:hover{ transform:translateY(-6px); box-shadow:0 18px 40px rgba(8,36,63,0.06) }
+.feature-icon{ width:14px;height:14px; display:inline-block; vertical-align:middle }
+.icon-sm svg{ width:12px !important; height:12px !important }
+
+/* Forms */
+.auth-card{ max-width:480px; margin:0 auto; padding:1.5rem; border-radius:12px; background:#fff; box-shadow:var(--card-shadow); }
+.auth-card h2{ margin:0 0 1rem; color:var(--blue-800); }
+
+/* Center the auth page */
+.auth-page{ display:flex; align-items:center; justify-content:center; min-height:70vh; padding:2rem 0 }
+.form-control{ margin-bottom:0.85rem; }
+.form-control label{ display:block; margin-bottom:0.35rem; font-size:0.95rem; color:#334155; }
+.form-control input, .form-control textarea, .form-control select{ width:100%; padding:0.65rem; border:1px solid rgba(11,59,111,0.08); border-radius:10px; transition:box-shadow .12s ease, border-color .12s ease }
+.form-control input:focus, .form-control textarea:focus, .form-control select:focus{ outline:none; border-color:var(--blue-600); box-shadow:0 8px 24px rgba(37,99,235,0.10) }
+.hint{ font-size:0.9rem; color:var(--muted) }
+
+/* small utility for link-like action */
+.link-small{ color:var(--blue-600); text-decoration:underline; font-weight:700 }
+
+/* Dashboard stats */
+.stats{ display:flex; gap:1rem; flex-wrap:wrap; margin-top:1rem; }
+.stat{ background:linear-gradient(180deg,#fff,#f8fafc); padding:1rem;border-radius:10px; flex:1 1 180px; border:1px solid rgba(8,36,63,0.04); }
+.stat h4{ margin:0; color:var(--blue-800); font-size:0.95rem; display:flex;align-items:center;gap:.5rem }
+.stat p{ margin:0.25rem 0 0; color:#0f172a; font-size:1.25rem; font-weight:700; }
+
+footer.site-footer{ text-align:center; padding:1.25rem 0; color:var(--muted); border-top:1px solid rgba(11,59,111,0.04); margin-top:2rem; background:transparent }
+
+/* Responsive tweaks */
+@media (max-width:900px){ .hero .card{ flex-direction:column; } }
+@media (max-width:640px){ .hero h1{ font-size:1.6rem } .container{ padding:0 0.75rem } .auth-card{ margin:1rem; } }
